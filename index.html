@@ -1,120 +1,150 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Azavea Pecha Kucha</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/white.min.css">
+        <style>
+            #countdown {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                height: 40px;
+                width: 40px;
+                text-align: center;
+            }
 
-<head>
-    <meta charset="utf-8">
-    <title>Azavea Pecha Kucha</title>
-    <meta name="theme-color" content="#209cee">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://branding.azavea.com/assets/azavea/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="https://branding.azavea.com/assets/azavea/favicon/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://branding.azavea.com/assets/azavea/favicon/favicon-16x16.png" sizes="16x16">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+            #countdown-number {
+                position: absolute;
+                color: white;
+                line-height: 40px;
+                z-index: 1;
+                left: 0;
+                right: 0;
+                text-align: center;
+                font-family: Helvetica, sans-serif;
+                font-size: 18px;
+            }
 
-<body>
-    <section class="hero is-fullheight is-info is-bold">
-        <div class="hero-head">
-            <nav class="navbar" role="navigation">
-                <div class="navbar-menu is-active">
-                    <div class="navbar-end">
-                        <a class="navbar-item" href="https://azavea.com/">Azavea</a>
-                        <a class="navbar-item" href="https://www.pechakucha.org/faq">PechaKucha FAQ</a>
-                        <div class="navbar-item">
-                            <p class="control">
-                                <a class="button is-info is-inverted" href="https://github.com/azavea/azavea-pechakucha#readme">
-                                    <span class="icon">
-                                        <i class="fab fa-github"></i>
-                                    </span>
-                                    <span>Instructions</span>
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
-        <div class="hero-body has-text-centered">
-            <div class="container">
-                <h1 class="title">
-                    Azavea Pecha Kucha
-                </h1>
-                <form method="GET" action="present/">
-                    <div class="field is-grouped">
-                        <p class="control has-icons-left">
-                            <input class="input is-info is-large" type="text" placeholder="username" name="user" required>
-                            <span class="icon is-left">
-                                <i class="fas fa-user"></i>
-                            </span>
-                        </p>
-                        <p class="control has-icons-left is-expanded">
-                            <input class="input is-info is-large" type="text" placeholder="repository" name="repo" required>
-                            <span class="icon is-left">
-                                <i class="fab fa-github"></i>
-                            </span>
-                        </p>
-                    </div>
-                    <div class="field is-grouped is-grouped-centered">
-                        <p class="control has-icons-left is-expanded">
-                            <input class="input is-info is-large" type="number" placeholder="number of slides" name="numslides" value="20" required>
-                            <span class="icon is-left">
-                                <i class="fas fa-list-ol"></i>
-                            </span>
-                        </p>
-                        <div class="control has-icons-left is-expanded">
-                            <div class="select is-large is-fullwidth">
-                                <select name="delay">
-                                    <option value="10">10 seconds</option>
-                                    <option value="15">15 seconds</option>
-                                    <option value="20" selected>20 seconds</option>
-                                    <option value="25">25 seconds</option>
-                                    <option value="30">30 seconds</option>
-                                </select>
-                            </div>
-                            <div class="icon is-left">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                        </div>
-                        <div class="control has-icons-left is-expanded">
-                            <div class="select is-large is-fullwidth">
-                                <select name="bgcolor">
-                                    <option value="#000">Black</option>
-                                    <option value="#fff" selected>White</option>
-                                </select>
-                            </div>
-                            <div class="icon is-left">
-                                <i class="fas fa-palette"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <p class="control">
-                            <button type="submit" class="button is-info is-inverted is-large is-fullwidth">
-                                Present
-                            </button>
-                        </p>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="hero-footer">
-            <div class="level">
-                <div class="level-item has-text-centered">
-                    <a href="https://bulma.io">
-                        <img src="https://bulma.io/images/made-with-bulma--white.png" alt="Made with Bulma" width="128" height="24">
-                    </a>
-                </div>
-                <div class="level-item has-text-centered">
-                    <small>
-                        <a href="https://revealjs.com">
-                            Made with RevealJS
-                        </a>
-                    </small>
-                </div>
-            </div>
-        </div>
-    </section>
-</body>
+            svg {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 40px;
+                height: 40px;
+                transform: rotateY(-180deg) rotateZ(-90deg);
+            }
 
+            #countdown-bg {
+                fill: rgba(0,0,0,0.4);
+            }
+
+            #countdowner {
+                stroke-dasharray: 113px;
+                stroke-dashoffset: 0px;
+                stroke-linecap: round;
+                stroke-width: 2px;
+                stroke: white;
+                fill: none;
+            }
+
+            @keyframes countdown {
+                from {
+                    stroke-dashoffset: 0px;
+                }
+                to {
+                    stroke-dashoffset: 113px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides"></div>
+        </div>
+        <div id="countdown">
+            <div id="countdown-number"></div>
+            <svg>
+                <circle id="countdown-bg" r="20" cx="20" cy="20"></circle>
+                <circle id="countdowner" r="18" cx="20" cy="20"></circle>
+            </svg>
+        </div>
+        <script>
+            const usp = new URLSearchParams(window.location.search);
+            const numslides = usp.get('numslides') || 20;
+            const bgcolor = usp.get('bgcolor') || '#fff';
+            const user = usp.get('user');
+            const repo = usp.get('repo');
+            const slides = document.querySelector('.reveal > .slides');
+
+            for (let i = 0; i < numslides; i++) {
+                const slide = document.createElement('section');
+                slide.setAttribute(
+                    'data-background-size',
+                    'contain'
+                );
+                slide.setAttribute(
+                    'data-background-color',
+                    bgcolor
+                );
+                slide.setAttribute(
+                    'data-background-image',
+                    `https://raw.githubusercontent.com/aerhiss/Pecha-Kucha-IUT/main/${i+1}.jpg`
+                );
+
+                slides.appendChild(slide);
+            }
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.min.js"></script>
+        <script>
+            const delay = usp.get('delay') || 20;
+            const countdownNumber = document.querySelector('#countdown-number');
+            const countdowner = document.querySelector('#countdowner');
+            let countdownId;
+
+            function tick() {
+                const oldVal = parseInt(countdownNumber.textContent);
+                if (oldVal === 0) {
+                    clearInterval(countdownId);
+                    return;
+                }
+
+                countdownNumber.textContent = oldVal - 1;
+            }
+
+            function initializeCountdown() {
+                countdownNumber.textContent = delay;
+
+                // Remove the countdowner animation and restart it.
+                //
+                // If done too quickly (before a frame is rendered) it has
+                // no effect, and the animation doesn't start (since the
+                // animation-iteration-count is 1). To get around this, we
+                // use setTimeout with a timeout a little more than a frame's
+                // render time to ensure it is applied to the DOM.
+                setTimeout(() => {
+                    countdowner.style.animation = ``;
+                    setTimeout(() => {
+                        countdowner.style.animation = `countdown ${delay}s linear 1 forwards`;
+                    }, 15);
+                }, 15);
+
+                if (countdownId) {
+                    clearInterval(countdownId);
+                }
+
+                countdownId = setInterval(tick, 1000);
+            }
+
+            Reveal.initialize({
+                autoSlide: delay * 1000,
+                autoSlideStoppable: false,
+                slideNumber: true,
+            });
+
+            initializeCountdown();
+
+            Reveal.addEventListener('slidechanged', initializeCountdown);
+        </script>
+    </body>
 </html>
