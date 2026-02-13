@@ -67,3 +67,12 @@ Slide 8 : Le futur chiffré (Matrix / Element)
 - Point clé : Décentralisation et Chiffrement E2EE (End-to-End Encryption).
 - Source/Lien : Comparatif Discord vs Matrix.
   - https://element.io/blog/element-vs-discord/
+
+
+
+
+### OUTIL
+
+https://github.com/azavea/azavea-pechakucha#readme
+
+https://azavea.github.io/azavea-pechakucha/
