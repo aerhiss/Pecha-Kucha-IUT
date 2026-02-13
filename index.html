@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Azavea Pecha Kucha</title>
+    <meta name="theme-color" content="#209cee">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://branding.azavea.com/assets/azavea/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="https://branding.azavea.com/assets/azavea/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://branding.azavea.com/assets/azavea/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <section class="hero is-fullheight is-info is-bold">
+        <div class="hero-head">
+            <nav class="navbar" role="navigation">
+                <div class="navbar-menu is-active">
+                    <div class="navbar-end">
+                        <a class="navbar-item" href="https://azavea.com/">Azavea</a>
+                        <a class="navbar-item" href="https://www.pechakucha.org/faq">PechaKucha FAQ</a>
+                        <div class="navbar-item">
+                            <p class="control">
+                                <a class="button is-info is-inverted" href="https://github.com/azavea/azavea-pechakucha#readme">
+                                    <span class="icon">
+                                        <i class="fab fa-github"></i>
+                                    </span>
+                                    <span>Instructions</span>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="hero-body has-text-centered">
+            <div class="container">
+                <h1 class="title">
+                    Azavea Pecha Kucha
+                </h1>
+                <form method="GET" action="present/">
+                    <div class="field is-grouped">
+                        <p class="control has-icons-left">
+                            <input class="input is-info is-large" type="text" placeholder="username" name="user" required>
+                            <span class="icon is-left">
+                                <i class="fas fa-user"></i>
+                            </span>
+                        </p>
+                        <p class="control has-icons-left is-expanded">
+                            <input class="input is-info is-large" type="text" placeholder="repository" name="repo" required>
+                            <span class="icon is-left">
+                                <i class="fab fa-github"></i>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="field is-grouped is-grouped-centered">
+                        <p class="control has-icons-left is-expanded">
+                            <input class="input is-info is-large" type="number" placeholder="number of slides" name="numslides" value="20" required>
+                            <span class="icon is-left">
+                                <i class="fas fa-list-ol"></i>
+                            </span>
+                        </p>
+                        <div class="control has-icons-left is-expanded">
+                            <div class="select is-large is-fullwidth">
+                                <select name="delay">
+                                    <option value="10">10 seconds</option>
+                                    <option value="15">15 seconds</option>
+                                    <option value="20" selected>20 seconds</option>
+                                    <option value="25">25 seconds</option>
+                                    <option value="30">30 seconds</option>
+                                </select>
+                            </div>
+                            <div class="icon is-left">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                        </div>
+                        <div class="control has-icons-left is-expanded">
+                            <div class="select is-large is-fullwidth">
+                                <select name="bgcolor">
+                                    <option value="#000">Black</option>
+                                    <option value="#fff" selected>White</option>
+                                </select>
+                            </div>
+                            <div class="icon is-left">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <button type="submit" class="button is-info is-inverted is-large is-fullwidth">
+                                Present
+                            </button>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="hero-footer">
+            <div class="level">
+                <div class="level-item has-text-centered">
+                    <a href="https://bulma.io">
+                        <img src="https://bulma.io/images/made-with-bulma--white.png" alt="Made with Bulma" width="128" height="24">
+                    </a>
+                </div>
+                <div class="level-item has-text-centered">
+                    <small>
+                        <a href="https://revealjs.com">
+                            Made with RevealJS
+                        </a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
