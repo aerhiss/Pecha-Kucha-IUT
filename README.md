@@ -3,4 +3,4 @@
 readme a faire
 
 #Image presentation:
-![image](https://user-images.githubusercontent.com/1430060/46046214-3cd2d680-c0ee-11e8-8287-89b3fc535549.png
+![image](https://raw.githubusercontent.com/aerhiss/Pecha-Kucha-IUT/refs/heads/main/pres%20kucha.png)
