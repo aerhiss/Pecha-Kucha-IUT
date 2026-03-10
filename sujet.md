@@ -78,6 +78,7 @@ https://www.franceinfo.fr/internet/reseaux-sociaux/la-plateforme-discord-repouss
 
 https://www.franceinfo.fr/internet/reseaux-sociaux/la-plateforme-discord-repousse-la-verification-d-age-pour-la-fin-2026-apres-des-critiques-sur-la-securite-des-donnees_7829012.html#:~:text=Fin%20de%20vie-,La%20plateforme%20Discord%20repousse%20la%20v%C3%A9rification%20d'%C3%A2ge%20pour%20la,une%20fuite%20de%20leurs%20donn%C3%A9es.
 
+https://www.franceinfo.fr/internet/reseaux-sociaux/la-plateforme-discord-repousse-la-verification-d-age-pour-la-fin-2026-apres-des-critiques-sur-la-securite-des-donnees_7829012.html
 
 ### OUTIL
 
