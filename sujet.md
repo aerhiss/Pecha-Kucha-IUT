@@ -74,6 +74,8 @@ https://www.lemonde.fr/pixels/article/2026/02/09/discord-annonce-l-extension-de-
 
 https://pausehardware.com/teamspeak-explose-apres-discord/
 
+https://www.franceinfo.fr/internet/reseaux-sociaux/la-plateforme-discord-repousse-la-verification-d-age-pour-la-fin-2026-apres-des-critiques-sur-la-securite-des-donnees_7829012.html
+
 
 ### OUTIL
 
