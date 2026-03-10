@@ -72,6 +72,8 @@ Slide 8 : Le futur chiffré (Matrix / Element)
 
 https://www.lemonde.fr/pixels/article/2026/02/09/discord-annonce-l-extension-de-la-verification-de-l-age-a-tous-ses-utilisateurs_6666048_4408996.html
 
+https://pausehardware.com/teamspeak-explose-apres-discord/
+
 
 ### OUTIL
 
