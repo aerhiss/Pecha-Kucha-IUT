@@ -68,7 +68,9 @@ Slide 8 : Le futur chiffré (Matrix / Element)
 - Source/Lien : Comparatif Discord vs Matrix.
   - https://element.io/blog/element-vs-discord/
 
+### Lien Valide
 
+https://www.lemonde.fr/pixels/article/2026/02/09/discord-annonce-l-extension-de-la-verification-de-l-age-a-tous-ses-utilisateurs_6666048_4408996.html
 
 
 ### OUTIL
