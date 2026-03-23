@@ -75,6 +75,14 @@
             const bgcolor = usp.get('bgcolor') || '#fff';
             const user = usp.get('user');
             const repo = usp.get('repo');
+            const formatsAutorises = ['jpg', 'png', 'jpeg', 'avif'];
+            let format = (usp.get('format') || 'jpg').toLowerCase();
+            
+            if (!formatsAutorises.includes(format)) {
+                console.warn(`Format ${format} non autorisé.`);
+                format = 'jpg';
+            }
+
             const slides = document.querySelector('.reveal > .slides');
 
             if (!(user && repo)) {
@@ -91,9 +99,10 @@
                     'data-background-color',
                     bgcolor
                 );
+                // On intègre la variable dynamique ${format} ici
                 slide.setAttribute(
                     'data-background-image',
-                    `https://raw.githubusercontent.com/${user}/${repo}/main/${i+1}.jpg`
+                    `https://raw.githubusercontent.com/${user}/${repo}/main/${i+1}.${format}`
                 );
 
                 slides.appendChild(slide);
@@ -120,12 +129,6 @@
                 countdownNumber.textContent = delay;
 
                 // Remove the countdowner animation and restart it.
-                //
-                // If done too quickly (before a frame is rendered) it has
-                // no effect, and the animation doesn't start (since the
-                // animation-iteration-count is 1). To get around this, we
-                // use setTimeout with a timeout a little more than a frame's
-                // render time to ensure it is applied to the DOM.
                 setTimeout(() => {
                     countdowner.style.animation = ``;
                     setTimeout(() => {
