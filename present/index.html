@@ -12,6 +12,7 @@
                 height: 40px;
                 width: 40px;
                 text-align: center;
+                display: none; /* Caché au départ, le temps de trouver les images */
             }
 
             #countdown-number {
@@ -49,19 +50,30 @@
             }
 
             @keyframes countdown {
-                from {
-                    stroke-dashoffset: 0px;
-                }
-                to {
-                    stroke-dashoffset: 113px;
-                }
+                from { stroke-dashoffset: 0px; }
+                to { stroke-dashoffset: 113px; }
+            }
+            
+            /* Petit message de chargement */
+            #loading-msg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-family: sans-serif;
+                font-size: 24px;
+                color: #333;
+                z-index: 1000;
             }
         </style>
     </head>
     <body>
+        <div id="loading-msg">Recherche des images en cours...</div>
+        
         <div class="reveal">
             <div class="slides"></div>
         </div>
+        
         <div id="countdown">
             <div id="countdown-number"></div>
             <svg>
@@ -69,48 +81,61 @@
                 <circle id="countdowner" r="18" cx="20" cy="20"></circle>
             </svg>
         </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.min.js"></script>
         <script>
             const usp = new URLSearchParams(window.location.search);
             const numslides = usp.get('numslides') || 20;
             const bgcolor = usp.get('bgcolor') || '#fff';
             const user = usp.get('user');
             const repo = usp.get('repo');
-            const formatsAutorises = ['jpg', 'png', 'jpeg', 'avif'];
-            let format = (usp.get('format') || 'jpg').toLowerCase();
+            const delay = usp.get('delay') || 5;
             
-            if (!formatsAutorises.includes(format)) {
-                console.warn(`Format ${format} non autorisé.`);
-                format = 'jpg';
-            }
-
-            const slides = document.querySelector('.reveal > .slides');
+            const slidesContainer = document.querySelector('.reveal > .slides');
+            const countdownDiv = document.querySelector('#countdown');
+            const loadingMsg = document.querySelector('#loading-msg');
+            const formatsAutorises = ['jpg', 'png', 'jpeg', 'avif'];
 
             if (!(user && repo)) {
+                loadingMsg.textContent = "Erreur : Utilisateur ou dépôt non spécifié dans l'URL.";
                 throw "User or repository unspecified";
             }
 
-            for (let i = 0; i < numslides; i++) {
-                const slide = document.createElement('section');
-                slide.setAttribute(
-                    'data-background-size',
-                    'contain'
-                );
-                slide.setAttribute(
-                    'data-background-color',
-                    bgcolor
-                );
-                // On intègre la variable dynamique ${format} ici
-                slide.setAttribute(
-                    'data-background-image',
-                    `https://raw.githubusercontent.com/${user}/${repo}/main/${i+1}.${format}`
-                );
-
-                slides.appendChild(slide);
+            async function trouverUrlImage(i) {
+                const basePath = `https://raw.githubusercontent.com/${user}/${repo}/main/${i}`;
+                
+                for (const ext of formatsAutorises) {
+                    const testUrl = `${basePath}.${ext}`;
+                    try {
+                        const response = await fetch(testUrl, { method: 'HEAD' });
+                        if (response.ok) {
+                            return testUrl;
+                        }
+                    } catch (e) {
+                    }
+                }
+                return `${basePath}.jpg`; 
             }
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.min.js"></script>
-        <script>
-            const delay = usp.get('delay') || 5;
+
+            async function initialiserPresentation() {
+                const promessesSlides = [];
+                for (let i = 0; i < numslides; i++) {
+                    const slidePromise = trouverUrlImage(i + 1).then(urlValide => {
+                        const slide = document.createElement('section');
+                        slide.setAttribute('data-background-size', 'contain');
+                        slide.setAttribute('data-background-color', bgcolor);
+                        slide.setAttribute('data-background-image', urlValide);
+                        return slide;
+                    });
+                    promessesSlides.push(slidePromise);
+                }
+
+                const slidesGenerees = await Promise.all(promessesSlides);
+                slidesGenerees.forEach(slide => slidesContainer.appendChild(slide));
+                loadingMsg.style.display = 'none';
+                countdownDiv.style.display = 'block';
+                demarrerRevealEtMinuteur();
+            }
             const countdownNumber = document.querySelector('#countdown-number');
             const countdowner = document.querySelector('#countdowner');
             let countdownId;
@@ -121,14 +146,11 @@
                     clearInterval(countdownId);
                     return;
                 }
-
                 countdownNumber.textContent = oldVal - 1;
             }
 
             function initializeCountdown() {
                 countdownNumber.textContent = delay;
-
-                // Remove the countdowner animation and restart it.
                 setTimeout(() => {
                     countdowner.style.animation = ``;
                     setTimeout(() => {
@@ -136,22 +158,23 @@
                     }, 15);
                 }, 15);
 
-                if (countdownId) {
-                    clearInterval(countdownId);
-                }
-
+                if (countdownId) clearInterval(countdownId);
                 countdownId = setInterval(tick, 1000);
             }
 
-            Reveal.initialize({
-                autoSlide: delay * 1000,
-                autoSlideStoppable: false,
-                slideNumber: true,
-            });
+            function demarrerRevealEtMinuteur() {
+                Reveal.initialize({
+                    autoSlide: delay * 1000,
+                    autoSlideStoppable: false,
+                    slideNumber: true,
+                });
 
-            initializeCountdown();
+                initializeCountdown();
+                Reveal.addEventListener('slidechanged', initializeCountdown);
+            }
 
-            Reveal.addEventListener('slidechanged', initializeCountdown);
+            // --- Lancement du script ---
+            initialiserPresentation();
         </script>
     </body>
 </html>
