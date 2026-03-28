@@ -70,9 +70,9 @@
 
 ###### L'IA d'estimation d'âge n'est pas neutre. Elle présente des taux d'erreur plus élevés pour les personnes de couleur. En confiant l'accès à l'information à des algorithmes biaisés, nous créons un internet à deux vitesses où certains sont plus "vérifiables" que d'autres.
 
-###### Diapositive 11 : Le risque de mission creep (dérive)
+~~###### Diapositive 11 : Le risque de mission creep (dérive)
 
-###### Ce qui commence par une simple vérification d'âge peut vite dériver. Persona vérifie déjà les listes de surveillance et les "médias défavorables". Aujourd'hui on vérifie votre âge, demain on pourrait vérifier vos opinions politiques avant de vous laisser rejoindre un groupe.
+###### Ce qui commence par une simple vérification d'âge peut vite dériver. Persona vérifie déjà les listes de surveillance et les "médias défavorables". Aujourd'hui on vérifie votre âge, demain on pourrait vérifier vos opinions politiques avant de vous laisser rejoindre un groupe.~~
 
 ###### Diapositive 12 : L'éphémérité est un mensonge
 
