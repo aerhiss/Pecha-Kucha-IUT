@@ -74,6 +74,41 @@ https://docs.google.com/document/d/1WKOLhURJA9kJfn88ozaGKeQEHTNQLHnKmLhEf6JTZ-E/
 
 ###### L'IA d'estimation d'âge n'est pas neutre. Elle présente des taux d'erreur plus élevés pour les personnes de couleur. En confiant l'accès à l'information à des algorithmes biaisés, nous créons un internet à deux vitesses où certains sont plus "vérifiables" que d'autres.
 
+
+Diapositive 11 : La fin du pseudonymat protecteur
+Le pseudonymat permettait de tester des idées sans risquer sa réputation réelle. En forçant la traçabilité, Discord tue cette liberté de parole. L'utilisateur s'autocensure désormais, conscient que son "pseudo" est techniquement lié à une identité vérifiée dans les bases de données de la firme.
+
+Diapositive 12 : L'agrégation massive des métadonnées
+Même sans carte d'identité, Discord en sait trop. En liant Steam, Spotify, Twitch et Xbox à un compte unique, la plateforme crée un portrait-robot comportemental ultra-précis. L'anonymat devient une façade quand vos habitudes de jeu et d'écoute vous trahissent à chaque clic.
+
+Diapositive 13 : Le "Family Center" : la surveillance parentale
+L'introduction du centre familial modifie la dynamique de confiance. Discord permet désormais aux parents de voir avec qui leurs enfants discutent. Si l'intention est louable, elle brise l'anonymat relatif dont bénéficiaient les mineurs au sein même de leur cercle privé.
+
+Diapositive 14 : La monétisation de l'identité
+L'anonymat est aussi bousculé par le modèle économique. Pour obtenir certains badges ou fonctionnalités "Nitro", l'utilisateur doit souvent fournir des moyens de paiement traçables. Le passage à la caisse est, en soi, une levée d'anonymat au profit des processeurs de paiement.
+
+Diapositive 15 : Le rôle des bots de modération tiers
+La plupart des serveurs utilisent des bots comme Mee6 ou Dyno. Ces outils tiers collectent des logs de messages et des adresses IP. L'anonymat sur Discord ne dépend pas que de Discord, mais d'une nébuleuse de développeurs tiers dont les standards de sécurité varient énormément.
+
+Diapositive 16 : La pression des App Stores (Apple et Google)
+Discord sacrifie l'anonymat et la liberté de contenu pour rester sur l'App Store. Les exigences de modération d'Apple forcent Discord à identifier plus strictement ses utilisateurs et à filtrer les contenus, transformant une plateforme de chat en un réseau social policé.
+
+Diapositive 17 : L'illusion des messages "privés" (DMs)
+Contrairement à Signal, les messages privés sur Discord ne sont pas chiffrés de bout en bout. Ils sont stockés en clair sur leurs serveurs. Cela signifie qu'en cas de requête judiciaire ou de faille interne, l'anonymat de vos conversations privées est techniquement nul.
+
+Diapositive 18 : La centralisation : un point de rupture unique
+Le problème majeur de Discord est sa structure centralisée. Contrairement aux anciens forums, un seul "ban" ou une seule fuite de données peut effacer 10 ans de vie numérique. L'anonymat ne peut pas survivre durablement dans une architecture où tout converge vers un seul point.
+
+Diapositive 19 : Le mirage de la sécurité par l'identité
+Discord prétend que la fin de l'anonymat arrêtera les nuisibles. Pourtant, les raids et le harcèlement persistent via des comptes volés. On sacrifie la vie privée de millions d'utilisateurs honnêtes pour un sentiment de sécurité qui ne règle pas les failles techniques de modération.
+
+Diapositive 20 : Conclusion : Le coût de la gratuité
+La fin de l'anonymat sur Discord est le prix à payer pour une plateforme "gratuite" et centralisée. Pour retrouver une véritable liberté numérique, l'utilisateur devra tôt ou tard choisir entre le confort de l'interface Discord et la sécurité des protocoles décentralisés.
+
+
+
+
+
 ###### ~Diapositive 11 : Le risque de mission creep (dérive)~
 
 ###### ~Ce qui commence par une simple vérification d'âge peut vite dériver. Persona vérifie déjà les listes de surveillance et les "médias défavorables". Aujourd'hui on vérifie votre âge, demain on pourrait vérifier vos opinions politiques avant de vous laisser rejoindre un groupe.~
