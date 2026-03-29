@@ -28,6 +28,10 @@
 
 ---
 
+## Penser a mettre à jour le doc de bilbiographie
+
+https://docs.google.com/document/d/1WKOLhURJA9kJfn88ozaGKeQEHTNQLHnKmLhEf6JTZ-E/edit?usp=sharing
+
 ###### Pecha Kucha : La fin de l'anonymat numérique
 
 ###### Diapositive 1 : Le concept du contrat social brisé
